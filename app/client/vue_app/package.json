@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "sephora-style-guide": "0.0.5",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
     "vue-upload-component": "^2.8.9",
