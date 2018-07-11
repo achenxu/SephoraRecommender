@@ -21,7 +21,7 @@ with open(PATH_TO_VARIANTIDS, 'rb') as f:
     variantIds = pickle.load(f)
 
 def model_predict(image_as_np_array, model=model, out_encodings=out_encodings, productIds=productIds, variantIds=variantIds):
-    in_encoding = model.predict([image_as_np_array])
+    in_encoding = np.reshape(model.predict([image_as_np_array]), (1,-1))
     scores = np.reshape(cosine_similarity(in_encoding, out_encodings), (-1))
 
     ret = []
