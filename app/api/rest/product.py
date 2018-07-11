@@ -6,10 +6,12 @@ from app.api.rest.base import BaseResource, SecureResource
 from app.api import api_rest
 
 
-def get_info(listOfMatches):
+def @get_info(listOfMatches):
     # sort the list of dictionaries by confidence in descending order
     # take only the first 10 products
     sortedList = sorted(listOfMatches, key=itemgetter('confidence'), reverse=True)[:10]
+
+    listOfProductInfoDictionaries = [];
 
     # for each of the 10 products, call the sephora endpoint to get product name, brand, price, variant image, variant name
     for product in sortedList:
@@ -23,4 +25,8 @@ def get_info(listOfMatches):
                 productName = variant.attributes.product-name
                 brandName = variant.attributes.brand-name
 
-    return json.dumps([variantName, variantPrice, variantImage, productName, brandName])
+                productInfo = {"variantName": variantName, "variantPrice": variantPrice, "variantImage": variantImage, "productName": productName, "brandName": brandName}
+                listOfProductInfoDictionaries.append(productInfo)
+
+
+    return json.dumps(listOfProductInfoDictionaries)
