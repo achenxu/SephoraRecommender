@@ -5,7 +5,7 @@ def Receive(image):
             {'productId': '15121', 'variantId': '34220', 'confidence': '0.4'},
             {'productId': '5552', 'variantId': '9689', 'confidence': '0.7'},
             {'productId': '9141', 'variantId': '18641', 'confidence': '0.95'},
-            {'productId': '9550', 'variantId': '19470', 'confidence': '0.34'},
+            {'productId': '11502', 'variantId': '24870', 'confidence': '0.34'},
             {'productId': '9934', 'variantId': '20724', 'confidence': '0.56'},
             {'productId': '10268', 'variantId': '21840', 'confidence': '0.6'},
             {'productId': '6254', 'variantId': '12414', 'confidence': '0.6'},

@@ -11,6 +11,6 @@ class uploadResource(BaseResource):
     def post(self):
         json_payload = request.json
         uploadedImage = request.files['photos']
-        print(uploadedImage)
         response = Consume(uploadedImage)
+        print(response)
         return {'hello' : response}, 200
