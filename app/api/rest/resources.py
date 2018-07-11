@@ -30,3 +30,13 @@ class SecureResourceOne(SecureResource):
     def get(self, resource_id):
         timestamp = datetime.utcnow().isoformat()
         return {'timestamp': timestamp}
+
+@api_rest.route('/upload')
+class uploadResource(BaseResource):
+
+    def post(self):
+        json_payload = request.json
+        # receive image here and process it
+        print(json_payload)
+        # change the response if needed
+        return {'image_upload': 'success'}, 200
