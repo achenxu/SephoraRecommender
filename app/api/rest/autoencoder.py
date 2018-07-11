@@ -1,15 +1,18 @@
-from keras.models import load_model
+from keras.models import load_model, Model
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 import pickle
 
-PATH_TO_MODEL = 'encoder.h5'
+PATH_TO_MODEL = 'autoencoder.h5'
 PATH_TO_OUT_ENCODINGS = 'out_encodings.pckl'
 PATH_TO_PRODUCTIDS = 'productIds.pckl'
 PATH_TO_VARIANTIDS = 'variantIds.pckl'
 
-model = load_model(PATH_TO_MODEL)
+# Load previsouly trained model
+autoencoder = load_model(PATH_TO_MODEL)
+# Get encoder layer from trained model
+model = Model(inputs=autoencoder.input, outputs=autoencoder.get_layer('encoded').output)
 
 with open(PATH_TO_OUT_ENCODINGS, 'rb') as f:
     out_encodings = pickle.load(f)
