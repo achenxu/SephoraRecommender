@@ -36,7 +36,8 @@ class uploadResource(BaseResource):
 
     def post(self):
         json_payload = request.json
-        # receive image here and process it
-        print(json_payload)
+        # image is received here as a FileStorage object
+        uploadedImage = request.files['photos']
+        print(uploadedImage)
         # change the response if needed
         return {'image_upload': 'success'}, 200
