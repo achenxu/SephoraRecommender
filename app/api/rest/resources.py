@@ -13,4 +13,4 @@ class uploadResource(BaseResource):
         uploadedImage = request.files['photos']
         response = Consume(uploadedImage)
         print(response)
-        return {'hello' : response}, 200
+        return response, 200
